@@ -24,6 +24,7 @@ rigor e continuar medindo, todos os dias, de forma automática.
 | `testar_filtros.py` | Testa 4 filtros **definidos antes de ver os resultados**, com período de treino e de teste separados. |
 | `diario.py` | Diário de sinais: teste **para frente** (dias que nenhum teste viu), com placar acumulado. |
 | `agente.py` + `.github/workflows/agentes.yml` | Agentes automáticos: no PC (Agendador do Windows + MetaTrader) e na nuvem (GitHub Actions), às 10h45 e 18h30 dos dias úteis. |
+| `arquivar_dados.py` + `historico_para_dados.py` | Banco de dados próprio: o agente da noite guarda as barras de 5 min de cada pregão em `historico/` (um `.csv.gz` por dia). O Yahoo só oferece ~60 dias; aqui o histórico cresce sem limite e pode ser convertido de volta para os testes. |
 | `adaptar_b3.py` | Script que gera a versão B3 a partir do pacote original (reprodutível). |
 
 ## Metodologia
@@ -90,8 +91,8 @@ Só biblioteca padrão do Python, exceto a ponte, que usa o pacote `MetaTrader5`
 até o Python 3.14).
 
 **Na nuvem:** o workflow `.github/workflows/agentes.yml` roda sozinho nos dias úteis
-(10h45: varredura; 18h30: diário) e salva os relatórios em `relatorios/` e o placar em
-`diario_sinais.csv`. Para rodar na hora: aba **Actions** → *Agentes B3* → *Run workflow*.
+(10h45: varredura; 18h30: diário) e salva os relatórios em `relatorios/`, o placar em
+`diario_sinais.csv` e as barras de cada pregão em `historico/`. Para rodar na hora: aba **Actions** → *Agentes B3* → *Run workflow*.
 
 ## Créditos
 
