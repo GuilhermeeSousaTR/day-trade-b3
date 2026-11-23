@@ -1,0 +1,88 @@
+PETR4|Petrobras PN
+PETR3|Petrobras ON
+VALE3|Vale
+ITUB4|Itaú Unibanco
+BBDC4|Bradesco PN
+BBAS3|Banco do Brasil
+B3SA3|B3
+ABEV3|Ambev
+WEGE3|WEG
+ITSA4|Itaúsa
+BPAC11|BTG Pactual
+SANB11|Santander
+SUZB3|Suzano
+RENT3|Localiza
+RADL3|Raia Drogasil
+EQTL3|Equatorial
+RDOR3|Rede D'Or
+PRIO3|PRIO
+GGBR4|Gerdau
+CSNA3|CSN
+USIM5|Usiminas
+CMIG4|Cemig
+CPLE6|Copel
+TAEE11|Taesa
+EGIE3|Engie
+SBSP3|Sabesp
+CSAN3|Cosan
+RAIL3|Rumo
+UGPA3|Ultrapar
+VBBR3|Vibra
+LREN3|Lojas Renner
+MGLU3|Magazine Luiza
+ASAI3|Assaí
+HAPV3|Hapvida
+FLRY3|Fleury
+HYPE3|Hypera
+TOTS3|Totvs
+EMBR3|Embraer
+KLBN11|Klabin
+BRAP4|Bradespar
+CMIN3|CSN Mineração
+GOAU4|Metalúrgica Gerdau
+CYRE3|Cyrela
+MRVE3|MRV
+EZTC3|EZTec
+MULT3|Multiplan
+BBSE3|BB Seguridade
+CXSE3|Caixa Seguridade
+PSSA3|Porto Seguro
+IRBR3|IRB
+COGN3|Cogna
+YDUQ3|Yduqs
+ALOS3|Allos
+SLCE3|SLC Agrícola
+SMTO3|São Martinho
+VIVT3|Vivo
+TIMS3|TIM
+ENEV3|Eneva
+ENGI11|Energisa
+CPFE3|CPFL
+NEOE3|Neoenergia
+ALUP11|Alupar
+SAPR11|Sanepar
+CSMG3|Copasa
+BRKM5|Braskem
+UNIP6|Unipar
+RECV3|PetroReconcavo
+BRAV3|Brava
+PETZ3|Petz
+VAMO3|Vamos
+SMFT3|Smart Fit
+AURE3|Auren
+DIRR3|Direcional
+CVCB3|CVC
+POMO4|Marcopolo
+RAPT4|Randon
+STBP3|Santos Brasil
+MOTV3|Motiva
+MBRF3|MBRF
+NATU3|Natura
+AZZA3|Azzas 2154
+BEEF3|Minerva
+INTB3|Intelbras
+LWSA3|Locaweb
+ODPV3|Odontoprev
+SIMH3|Simpar
+TEND3|Tenda
+CURY3|Cury

@@ -1,0 +1,35 @@
+DAY TRADE B3 - versão adaptada (para treino e estudo)
+=====================================================
+
+O que é
+-------
+Adaptação para a bolsa brasileira (B3) do pacote gratuito "day-trader-skill",
+de Jake Schincariol (licença MIT, arquivo LICENSE). É o mesmo pacote que aparece
+no anúncio "Máquina de Investimento". O original é feito para a bolsa americana.
+
+O que foi mudado
+----------------
+- Horário de Brasília. Pregão das 10h às 17h55 (de novembro a março) ou das 10h
+  às 16h55 (de março a novembro), seguindo a regra da B3. Os scripts decidem sozinhos.
+- Feriados da B3: 2026 conferidos no site da B3; 2027 são previsão.
+- Códigos da B3 (PETR4, VALE3, TAEE11...). O ".SA" é acrescentado para o Yahoo.
+- Varredura com uma lista de cerca de 90 ações líquidas da B3
+  (day-trade-b3\trader\universe.txt, pode editar).
+- Notícias do Google Notícias em português.
+- A Máquina do Tempo simula das 10h às 16h55, a parte do pregão comum ao ano todo.
+- Nenhuma ordem real: a parte de corretora só registra o que você mesmo digitar no
+  app do banco. A integração americana (Alpaca) não deve ser usada.
+- As skills de "analista" e "políticos americanos" continuam americanas e servem
+  só para BDRs.
+
+Avisos honestos
+---------------
+- No exemplo do próprio autor, a regra deu praticamente cara ou coroa.
+- A maioria das pessoas físicas que insiste em day trade perde dinheiro.
+- Os dados do Yahoo são gratuitos e atrasados (cerca de 15 minutos).
+- Os scripts mostram "$", mas na B3 os valores são em reais.
+- Day trade paga Imposto de Renda e tem custos. Confira as regras na Receita.
+- Treine com o simulador (R$ 500 de mentira) por pelo menos 3 meses antes de
+  usar dinheiro de verdade.
+
+Isto não é recomendação de investimento.
