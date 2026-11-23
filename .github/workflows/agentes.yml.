@@ -1,0 +1,75 @@
+name: Agentes B3 (varredura e diário de sinais)
+
+# Horários em UTC. Brasília = UTC-3 (sem horário de verão).
+on:
+  schedule:
+    - cron: "45 13 * * 1-5"   # 10h45 em Brasília: varredura da manhã
+    - cron: "30 21 * * 1-5"   # 18h30 em Brasília: diário de sinais
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: "manha ou noite"
+        default: "noite"
+
+permissions:
+  contents: write   # para salvar o diário e os relatórios no repositório
+
+concurrency:
+  group: agentes-b3
+  cancel-in-progress: false
+
+jobs:
+  agente:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Qual agente?
+        id: modo
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "modo=${{ github.event.inputs.modo }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "45 13 * * 1-5" ]; then
+            echo "modo=manha" >> "$GITHUB_OUTPUT"
+          else
+            echo "modo=noite" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Tem pregão hoje?
+        id: pregao
+        run: |
+          if python pregao_hoje.py; then echo "ok=sim" >> "$GITHUB_OUTPUT"; else echo "ok=nao" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Baixar dados (Yahoo, gratuito e com atraso)
+        if: steps.pregao.outputs.ok == 'sim'
+        run: |
+          mkdir -p relatorios
+          python yahoo_baixar.py | tee baixar.txt
+
+      - name: Varredura da manhã
+        if: steps.pregao.outputs.ok == 'sim' && steps.modo.outputs.modo == 'manha'
+        run: |
+          DIA=$(TZ=America/Sao_Paulo date +%F)
+          { cat baixar.txt; echo; python trader-scanner/scan.py orb --offline dados/varredura_5m.json --now "$(cat dados/agora.txt)" --min-price 1 || true; } > "relatorios/${DIA}_manha.txt"
+          cat "relatorios/${DIA}_manha.txt" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Diário de sinais
+        if: steps.pregao.outputs.ok == 'sim' && steps.modo.outputs.modo == 'noite'
+        run: |
+          DIA=$(TZ=America/Sao_Paulo date +%F)
+          { cat baixar.txt; echo; python diario.py --pasta dados || true; } > "relatorios/${DIA}_noite.txt"
+          cat "relatorios/${DIA}_noite.txt" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Salvar no repositório
+        if: steps.pregao.outputs.ok == 'sim'
+        run: |
+          git config user.name "agente-b3"
+          git config user.email "agente-b3@users.noreply.github.com"
+          git add relatorios diario_sinais.csv trader/watchlist.json 2>/dev/null || true
+          git diff --cached --quiet || git commit -m "Agente ${{ steps.modo.outputs.modo }}: $(TZ=America/Sao_Paulo date '+%d/%m/%Y %H:%M')"
+          git push
