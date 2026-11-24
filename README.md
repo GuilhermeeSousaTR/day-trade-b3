@@ -23,8 +23,12 @@ rigor e continuar medindo, todos os dias, de forma automática.
 | `backtest_orb.py` | Teste completo da regra de rompimento da faixa de abertura em todas as ações e dias, com custos, comparado a "comprar sem regra". |
 | `testar_filtros.py` | Testa 4 filtros **definidos antes de ver os resultados**, com período de treino e de teste separados. |
 | `diario.py` | Diário de sinais: teste **para frente** (dias que nenhum teste viu), com placar acumulado. |
+| `analise_diaria.py` | Análise diária do diário: último pregão, tendência, comparação com o backtest, filtros, ações e check-up de pregões faltando (`analise/por_dia.csv`). |
 | `agente.py` + `.github/workflows/agentes.yml` | Agentes automáticos: no PC (Agendador do Windows + MetaTrader) e na nuvem (GitHub Actions), às 10h45 e 18h30 dos dias úteis. |
 | `arquivar_dados.py` + `historico_para_dados.py` | Banco de dados próprio: o agente da noite guarda as barras de 5 min de cada pregão em `historico/` (um `.csv.gz` por dia). O Yahoo só oferece ~60 dias; aqui o histórico cresce sem limite e pode ser convertido de volta para os testes. |
+| `HIPOTESES.md` | Registro de hipóteses escrito **antes** de cada teste, com regra, motivo, critério de aprovação e veredito. |
+| `pesquisa_swing.py` | Laboratório de swing (rebalanceamento mensal, ~12 anos de dados diários): testa as hipóteses S1 a S3 com treino 2015–2019 e teste 2020 em diante. |
+| `carteira_s1.py` | Teste para frente da S1 (Momento 12-1): no último pregão de cada mês monta a carteira e mede o mês anterior contra a referência e o CDI (`s1/`). |
 | `adaptar_b3.py` | Script que gera a versão B3 a partir do pacote original (reprodutível). |
 
 ## Metodologia
@@ -74,6 +78,19 @@ estratégias aplicadas a dados embaralhados, ou seja, de puro acaso.
 **Conclusão:** nesses dados, a vantagem bruta da regra é menor que os custos de operar.
 O diário de sinais continua medindo para frente.
 
+## Pesquisa de swing (hipóteses registradas em 24/11/2026)
+
+| Hipótese | Treino 2015–2019 | Teste 2020–2026 | Veredito |
+|---|---|---|---|
+| S1 Momento 12-1 (20% com maior alta em 12 meses, sem o último) | +6,0 p.p./ano | +5,7 p.p./ano | aprovada, evidência fraca |
+| S2 Baixa volatilidade | -9,7 | +3,9 | reprovada |
+| S3 Filtro de tendência (MM200) | -2,4 | -11,3 | reprovada |
+
+Diferença por ano contra a carteira com todas as ações em pesos iguais, já com custos.
+A S1 ganhou em 9 de 12 anos, mas o intervalo de confiança do excesso (-2,7 a +11,8 p.p./ano)
+ainda inclui o zero e, no teste, ela rendeu quase o mesmo que o CDI com queda máxima de -40,8%.
+Por isso segue só em **teste para frente** (`carteira_s1.py`), sem dinheiro. Detalhes em `HIPOTESES.md`.
+
 ## Como rodar
 
 ```bash
@@ -85,6 +102,7 @@ py -3.14 mt5_ponte.py baixar --lista      # MetaTrader 5 (Windows)   -> pasta da
 python backtest_orb.py --pasta dados_mt5
 python testar_filtros.py --pasta dados_mt5
 python diario.py --pasta dados_mt5
+python analise_diaria.py
 ```
 
 Só biblioteca padrão do Python, exceto a ponte, que usa o pacote `MetaTrader5` (Windows,
