@@ -1,0 +1,61 @@
+Horário de referência: 25/11/2026 17:05 (Brasília).
+Dados do Yahoo gravados em dados: 82 de 88 ações.
+Não vieram: CPLE6, EMBR3, NEOE3, PETZ3, STBP3, ODPV3
+
+Diário de sinais (início em 23/11/2026). Registrados agora: 56 sinais de 1 pregão(ões): 25/11.
+
+PLACAR ACUMULADO desde 23/11/2026:
+regra sem filtro               135 ops | acerto  49.6% | média -0.114% (IC95 -0.192 a -0.010) | ganho médio +0.83% | perda média -1.04%
+só com mercado_em_alta         121 ops | acerto  48.8% | média -0.167% (IC95 -0.257 a -0.115) | ganho médio +0.74% | perda média -1.03%
+só com volume_alto              34 ops | acerto  50.0% | média -0.042% (IC95 -0.104 a +0.008) | ganho médio +0.96% | perda média -1.04%
+só com sem_gap                 101 ops | acerto  49.5% | média -0.120% (IC95 -0.256 a -0.019) | ganho médio +0.74% | perda média -0.96%
+só com faixa_estreita           80 ops | acerto  56.2% | média -0.025% (IC95 -0.070 a +0.116) | ganho médio +0.66% | perda média -0.91%
+
+Só 3 pregão(ões) no diário: ainda é cedo. Conclusões firmes pedem uns 40 pregões (2 meses).
+Planilha completa: /home/runner/work/day-trade-b3/day-trade-b3/diario_sinais.csv (abre no Excel ou no Power BI). Não é recomendação de investimento.
+
+========================================================================
+ANÁLISE DIÁRIA (25/11/2026). Teste para frente do rompimento da abertura.
+========================================================================
+Pregões no diário: 3 de 40 necessários para a 1ª conclusão firme.
+
+1) ÚLTIMO PREGÃO (25/11)
+   56 sinais | acerto 54% | média -0,115% por operação | soma -6,44%
+   Em dinheiro de mentira: R$ 1.000 em cada sinal daria -R$ 64,38 no dia.
+   Como terminaram: alvo 29, fechamento 1, stop 26
+   Melhor: BRAV3 +1,33% (alvo) | Pior: NATU3 -2,35% (stop)
+
+2) PREGÃO A PREGÃO (cada linha é um dia)
+   dia      ops   acerto      média    acumulado
+   23/11     34      44%    -0,010%       -0,01%
+   24/11     45      49%    -0,192%       -0,20%
+   25/11     56      54%    -0,115%       -0,32%
+   Dias positivos: 0 de 3 | maior queda da curva: -0,32%
+
+3) PARA FRENTE x BACKTEST
+   Backtest (30/07 a 19/11, 2.624 ops): média -0,082% por operação (IC95 -0,166 a -0,000)
+   Para frente (135 ops): média -0,114% | acerto 49,6%
+   Leitura: ainda não dá para medir a incerteza (precisa de pelo menos 5 pregões).
+
+4) FILTROS (só acompanhamento: nenhum passou no teste histórico)
+   mercado_em_alta  com:  121 ops -0,167% | sem:   14 ops +0,343% | diferença -0,510 p.p.
+   volume_alto      com:   34 ops -0,042% | sem:  101 ops -0,139% | diferença +0,097 p.p.
+   sem_gap          com:  101 ops -0,120% | sem:   34 ops -0,097% | diferença -0,023 p.p.
+   faixa_estreita   com:   80 ops -0,025% | sem:   55 ops -0,243% | diferença +0,218 p.p.
+   Com menos de 40 pregões, diferenças entre filtros são quase só sorte.
+
+5) AÇÕES (soma dos resultados, só as com 3+ operações)
+   Mais ajudaram: CSMG3 +2,83% (3), SAPR11 +2,14% (3), ALUP11 +1,89% (3)
+   Mais atrapalharam: CSNA3 -3,50% (3), BBDC4 -2,81% (3), RAPT4 -2,77% (3)
+   Aviso: com poucas operações por ação, isso é ruído. Não serve para escolher ações.
+
+6) CHECK-UP
+   OK: os 2 pregão(ões) encerrados desde 23/11 estão no diário.
+
+Planilha por dia: analise/por_dia.csv. Não é recomendação de investimento.
+
+Histórico: 1 dia(s) novo(s) guardado(s) (25/11). Total no histórico: 61 pregões.
+
+S1 Momento 12-1 — teste para frente. Hoje 25/11/2026: dia comum (só acompanhamento).
+A primeira carteira será montada no último pregão do mês.
+Não é recomendação de investimento.
