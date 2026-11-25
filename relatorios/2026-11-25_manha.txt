@@ -1,0 +1,56 @@
+Horário de referência: 25/11/2026 11:37 (Brasília).
+Dados do Yahoo gravados em dados: 82 de 88 ações.
+Não vieram: CPLE6, EMBR3, NEOE3, PETZ3, STBP3, ODPV3
+
+Opening-range breakout scan, Wed 2026-11-25 11:37 AM BRT: 15-minute range (10:00 to 10:15 AM), 5-minute bars, Yahoo.
+Fetched 82 of 82 charts; 64 usable (1 under the price / volume floor); 55 candidates, 55 confirmed with real highs and lows.
+47 of 64 charts closed above their opening-range high by 11:37 AM:
+  10:20 AM  EGIE3      $24.90  range 24.76 to 24.86  +0.16% over
+  10:20 AM  ENGI11     $49.88  range 49.54 to 49.84  +0.08% over
+  10:20 AM  HYPE3      $21.95  range 21.67 to 21.90  +0.23% over
+  10:25 AM  B3SA3      $14.35  range 14.19 to 14.31  +0.28% over
+  10:25 AM  NATU3       $4.45  range 4.28 to 4.42  +0.68% over
+  10:25 AM  RENT3      $28.84  range 28.58 to 28.82  +0.07% over
+  10:25 AM  SMFT3      $18.19  range 17.95 to 18.15  +0.22% over
+  10:25 AM  UGPA3      $30.65  range 30.26 to 30.62  +0.10% over
+  10:25 AM  UNIP6      $49.37  range 48.91 to 49.36  +0.02% over
+  10:35 AM  ABEV3      $16.20  range 16.09 to 16.18  +0.12% over
+  10:35 AM  BBDC4      $13.76  range 13.67 to 13.72  +0.29% over
+  10:35 AM  BBSE3      $36.55  range 36.30 to 36.54  +0.03% over
+  10:35 AM  BRAV3      $12.27  range 11.97 to 12.22  +0.41% over
+  10:35 AM  CMIG4      $10.87  range 10.78 to 10.86  +0.09% over
+  10:35 AM  CURY3      $25.74  range 25.30 to 25.72  +0.08% over
+  10:35 AM  CYRE3      $18.78  range 18.60 to 18.76  +0.11% over
+  10:35 AM  ENEV3      $26.74  range 26.57 to 26.73  +0.04% over
+  10:35 AM  ITSA4      $13.00  range 12.91 to 12.98  +0.15% over
+  10:35 AM  LREN3       $9.35  range 9.18 to 9.32  +0.32% over
+  10:35 AM  MOTV3      $16.09  range 15.91 to 16.08  +0.06% over
+  10:35 AM  PETR3      $46.97  range 46.47 to 46.89  +0.17% over
+  10:35 AM  PETR4      $41.16  range 40.70 to 41.09  +0.17% over
+  10:35 AM  RAIL3      $17.07  range 16.83 to 16.99  +0.47% over
+  10:35 AM  SLCE3      $16.96  range 16.79 to 16.95  +0.06% over
+  10:35 AM  TAEE11     $40.05  range 39.75 to 39.95  +0.25% over
+  10:35 AM  VALE3      $55.46  range 54.92 to 55.41  +0.09% over
+  10:40 AM  ALOS3      $25.99  range 25.81 to 25.94  +0.19% over
+  10:40 AM  AZZA3      $14.53  range 14.20 to 14.50  +0.21% over
+  10:40 AM  CSNA3       $3.34  range 3.27 to 3.31  +0.91% over
+  10:40 AM  EQTL3      $34.00  range 33.71 to 33.99  +0.03% over
+  10:40 AM  MULT3      $26.43  range 26.21 to 26.41  +0.08% over
+  10:40 AM  RAPT4       $3.68  range 3.64 to 3.67  +0.27% over
+  10:40 AM  RDOR3      $37.01  range 36.70 to 36.94  +0.19% over
+  10:40 AM  SAPR11     $34.37  range 34.05 to 34.36  +0.03% over
+  10:40 AM  SIMH3       $5.64  range 5.55 to 5.61  +0.53% over
+  10:40 AM  VAMO3       $2.64  range 2.59 to 2.62  +0.76% over
+  10:40 AM  YDUQ3       $9.71  range 9.61 to 9.68  +0.31% over
+  10:45 AM  IRBR3      $61.24  range 58.50 to 61.06  +0.29% over
+  10:45 AM  RADL3      $15.19  range 14.89 to 15.13  +0.40% over
+  10:50 AM  POMO4       $3.43  range 3.35 to 3.42  +0.29% over
+  11:05 AM  CSMG3      $58.42  range 57.28 to 58.34  +0.14% over
+  11:05 AM  CXSE3      $20.23  range 20.00 to 20.22  +0.05% over
+  11:05 AM  TOTS3      $31.37  range 30.99 to 31.35  +0.06% over
+  11:10 AM  CMIN3       $4.82  range 4.76 to 4.81  +0.21% over
+  11:10 AM  DIRR3       $9.15  range 9.05 to 9.14  +0.11% over
+  11:10 AM  INTB3      $14.50  range 14.31 to 14.48  +0.14% over
+  11:10 AM  TEND3      $15.44  range 15.22 to 15.43  +0.06% over
+Wrote trader/watchlist.json (mode orb, 47 hits).
+A scan is a list of charts that match a rule, not a list of stocks to buy. Next: pick one chart, then /trader-news TICKER and /trader-entry TICKER.
