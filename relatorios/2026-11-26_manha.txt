@@ -1,0 +1,23 @@
+Horário de referência: 26/11/2026 11:33 (Brasília).
+Dados do Yahoo gravados em dados: 82 de 88 ações.
+Não vieram: CPLE6, EMBR3, NEOE3, PETZ3, STBP3, ODPV3
+
+Opening-range breakout scan, Thu 2026-11-26 11:33 AM BRT: 15-minute range (10:00 to 10:15 AM), 5-minute bars, Yahoo.
+Fetched 82 of 82 charts; 15 usable; 14 candidates, 14 confirmed with real highs and lows.
+14 of 15 charts closed above their opening-range high by 11:33 AM:
+  10:20 AM  ALUP11     $35.00  range 34.34 to 34.87  +0.37% over
+  10:20 AM  BBSE3      $37.17  range 36.61 to 37.06  +0.30% over
+  10:20 AM  INTB3      $15.14  range 14.57 to 15.01  +0.87% over
+  10:20 AM  IRBR3      $63.03  range 62.11 to 62.90  +0.21% over
+  10:20 AM  TAEE11     $40.98  range 40.04 to 40.77  +0.52% over
+  10:20 AM  UNIP6      $50.64  range 49.98 to 50.52  +0.24% over
+  10:25 AM  CXSE3      $20.72  range 20.45 to 20.69  +0.14% over
+  10:25 AM  SLCE3      $17.02  range 16.74 to 17.00  +0.12% over
+  10:30 AM  TIMS3      $22.21  range 22.00 to 22.13  +0.36% over
+  10:30 AM  VIVT3      $35.34  range 34.82 to 35.31  +0.08% over
+  10:35 AM  WEGE3      $50.52  range 49.50 to 50.13  +0.78% over
+  11:00 AM  RAPT4       $3.95  range 3.85 to 3.94  +0.25% over
+  11:05 AM  POMO4       $3.54  range 3.42 to 3.53  +0.28% over
+  11:15 AM  KLBN11     $17.02  range 16.78 to 17.00  +0.12% over
+Wrote trader/watchlist.json (mode orb, 14 hits).
+A scan is a list of charts that match a rule, not a list of stocks to buy. Next: pick one chart, then /trader-news TICKER and /trader-entry TICKER.
