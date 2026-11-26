@@ -134,3 +134,17 @@ data;acao;hora_entrada;entrada;stop;alvo;saida;como_terminou;resultado_pct;merca
 2026-11-25;LWSA3;14:05;3,19;3,16;3,23;3,23;alvo;0,997;sim;nao;sim;sim
 2026-11-25;USIM5;15:00;4,93;4,88;4,97;4,88;stop;-1,013;sim;nao;sim;sim
 2026-11-25;COGN3;15:50;1,68;1,66;1,70;1,66;stop;-1,290;sim;nao;nao;sim
+2026-11-26;ALUP11;10:20;35,00;34,60;35,40;35,40;alvo;1,029;nao;sim;nao;nao
+2026-11-26;BBSE3;10:20;37,17;36,84;37,50;37,50;alvo;0,801;nao;nao;nao;nao
+2026-11-26;INTB3;10:20;15,14;14,79;15,49;15,49;alvo;2,212;nao;nao;nao;nao
+2026-11-26;IRBR3;10:20;63,03;62,51;63,55;63,55;alvo;0,733;nao;sim;sim;nao
+2026-11-26;TAEE11;10:20;40,98;40,41;41,55;41,55;alvo;1,303;nao;nao;nao;nao
+2026-11-26;UNIP6;10:20;50,64;50,25;51,03;51,03;alvo;0,670;nao;nao;nao;nao
+2026-11-26;CXSE3;10:25;20,72;20,57;20,87;20,87;alvo;0,624;nao;nao;nao;sim
+2026-11-26;SLCE3;10:25;17,02;16,87;17,17;17,17;alvo;0,781;nao;nao;sim;nao
+2026-11-26;TIMS3;10:30;22,21;22,06;22,35;22,35;alvo;0,553;nao;nao;sim;sim
+2026-11-26;VIVT3;10:30;35,34;35,07;35,61;35,61;alvo;0,678;nao;nao;nao;nao
+2026-11-26;WEGE3;10:35;50,52;49,82;51,23;51,23;alvo;1,295;nao;nao;sim;nao
+2026-11-26;RAPT4;11:00;3,95;3,89;4,01;3,89;stop;-1,492;nao;sim;nao;nao
+2026-11-26;POMO4;11:05;3,54;3,48;3,60;3,60;alvo;1,736;nao;sim;nao;nao
+2026-11-26;KLBN11;11:15;17,02;16,89;17,15;16,95;fechamento;-0,511;nao;nao;nao;nao
