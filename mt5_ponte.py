@@ -9,6 +9,7 @@ Yahoo. Esta ponte NUNCA envia ordens: ela não chama nenhuma função de ordem.
     py -3.14 mt5_ponte.py teste                       # confere a conexão
     py -3.14 mt5_ponte.py baixar PETR4 VALE3 ITUB4     # grava dados_mt5\\PETR4.json etc.
     py -3.14 mt5_ponte.py baixar --lista               # todas as ações de trader\\universe.txt
+    py -3.14 mt5_ponte.py historico                    # ANOS de barras de 5 min (dados_mt5_longo)
 
 Antes: instale o MetaTrader 5, entre numa conta (de preferência DEMO) de uma
 corretora que ofereça a B3 e deixe o programa aberto.
@@ -17,7 +18,9 @@ Windows e, por enquanto, só até o Python 3.14.
 """
 import argparse
 import collections
+import csv
 import datetime as dt
+import gzip
 import json
 import os
 import sys
@@ -162,6 +165,64 @@ def cmd_baixar(a):
         print("  não veio: " + f)
 
 
+def cmd_historico(a):
+    """Baixa o máximo de barras de 5 min que a corretora oferece (anos) para a pesquisa.
+    Grava dados_mt5_longo/ACAO.csv.gz com horário em UTC. Só leitura."""
+    mt5 = conectar()
+    simbolos = [s.upper() for s in a.simbolos] or ler_lista()
+    pasta = "dados_mt5_longo"
+    os.makedirs(pasta, exist_ok=True)
+    term = mt5.terminal_info()
+    limite = int(getattr(term, "maxbars", 0) or 100000)
+    pedido = min(a.barras, limite)
+    print("Limite do MetaTrader ('Máx. barras no gráfico'): %d barras de 5 min (~%.1f anos). Pedindo %d por ação."
+          % (limite, limite / 95 / 250, pedido))
+    tamanhos = [x for x in (pedido, 100000, 50000, 20000, 5000) if x <= pedido]
+    resumo, falhas = [], []
+    for n, s in enumerate(simbolos, 1):
+        if not mt5.symbol_select(s, True):
+            falhas.append("%s (não disponível)" % s)
+            continue
+        r = None
+        for qtd_pedida in tamanhos:  # se o pedido grande falhar, tenta menores
+            antes = -1
+            for _ in range(6):  # o MetaTrader baixa do servidor aos poucos: insiste até parar de crescer
+                r = mt5.copy_rates_from_pos(s, mt5.TIMEFRAME_M5, 0, qtd_pedida)
+                qtd = 0 if r is None else len(r)
+                if qtd == antes or qtd >= qtd_pedida:
+                    break
+                antes = qtd
+                time.sleep(2)
+            if r is not None and len(r) > 0:
+                break
+        if r is None or len(r) == 0:
+            falhas.append("%s (sem barras; erro do MetaTrader: %s)" % (s, mt5.last_error()))
+            continue
+        aj = detectar_fuso(r)
+        with gzip.open(os.path.join(pasta, s + ".csv.gz"), "wt", encoding="utf-8", newline="") as fh:
+            w = csv.writer(fh)
+            w.writerow(["ts_utc", "open", "high", "low", "close", "volume"])
+            for b in r:
+                vol = int(b["real_volume"]) if "real_volume" in b.dtype.names and b["real_volume"] else int(b["tick_volume"])
+                w.writerow([int(b["time"]) + aj * 3600, float(b["open"]), float(b["high"]),
+                            float(b["low"]), float(b["close"]), vol])
+        ini = dt.datetime(1970, 1, 1) + dt.timedelta(seconds=int(r[0]["time"]) + aj * 3600)
+        fim = dt.datetime(1970, 1, 1) + dt.timedelta(seconds=int(r[-1]["time"]) + aj * 3600)
+        resumo.append((s, len(r), ini.date(), fim.date()))
+        print("  [%d/%d] %s: %d barras, de %s a %s" % (n, len(simbolos), s, len(r),
+                                                     ini.strftime("%d/%m/%Y"), fim.strftime("%d/%m/%Y")))
+    mt5.shutdown()
+    print("\nHistórico gravado em %s: %d de %d ações." % (pasta, len(resumo), len(simbolos)))
+    for f in falhas:
+        print("  não veio: " + f)
+    if resumo:
+        anos = sorted((fim - ini).days / 365.25 for _, _, ini, fim in resumo)
+        print("Tamanho típico do histórico: %.1f anos." % anos[len(anos) // 2])
+        if anos[len(anos) // 2] < 2:
+            print("Veio pouco. No MetaTrader: Ferramentas > Opções > Gráficos > 'Máx. barras no gráfico'"
+                  " = Ilimitado (ou o maior número), feche e abra o programa, e rode de novo.")
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Ponte MetaTrader 5 -> ferramentas B3 (só leitura).")
     sp = ap.add_subparsers(dest="cmd", required=True)
@@ -173,6 +234,10 @@ def main(argv=None):
     b.add_argument("--lista", action="store_true", help="usar trader/universe.txt")
     b.add_argument("--dias", type=int, default=60)
     b.set_defaults(f=cmd_baixar)
+    h = sp.add_parser("historico", help="anos de barras de 5 min para a pesquisa (dados_mt5_longo)")
+    h.add_argument("simbolos", nargs="*", help="vazio = todas de trader/universe.txt")
+    h.add_argument("--barras", type=int, default=150000)
+    h.set_defaults(f=cmd_historico)
     a = ap.parse_args(argv)
     a.f(a)
 
