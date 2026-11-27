@@ -1,0 +1,10 @@
+Horário de referência: 27/11/2026 11:27 (Brasília).
+Dados do Yahoo gravados em dados: 82 de 88 ações.
+Não vieram: CPLE6, EMBR3, NEOE3, PETZ3, STBP3, ODPV3
+
+Opening-range breakout scan, Fri 2026-11-27 11:27 AM BRT: 15-minute range (10:00 to 10:15 AM), 5-minute bars, Yahoo.
+Fetched 82 of 82 charts; 11 usable; 3 candidates, 3 confirmed with real highs and lows.
+1 of 11 charts closed above their opening-range high by 11:27 AM:
+  10:25 AM  TIMS3      $23.35  range 22.90 to 23.33  +0.09% over
+Wrote trader/watchlist.json (mode orb, 1 hit).
+A scan is a list of charts that match a rule, not a list of stocks to buy. Next: pick one chart, then /trader-news TICKER and /trader-entry TICKER.

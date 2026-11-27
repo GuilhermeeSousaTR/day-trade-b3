@@ -1,10 +1,10 @@
 {
   "created_by": "trader-scanner",
-  "created_at": "2026-11-26T14:33:00Z",
+  "created_at": "2026-11-27T14:27:00Z",
   "mode": "orb",
-  "as_of": "2026-11-26 11:33 BRT",
+  "as_of": "2026-11-27 11:27 BRT",
   "universe": 82,
-  "scanned": 15,
+  "scanned": 11,
   "failed": 0,
   "unconfirmed": 0,
   "source": "yahoo",
@@ -17,186 +17,17 @@
   "note": "A scan is a list of charts that match a rule, not a list of stocks to buy.",
   "hits": [
     {
-      "symbol": "ALUP11",
-      "setups": [
-        "orb"
-      ],
-      "price": 35.0,
-      "at": "10:20 AM",
-      "bar_start": "10:15",
-      "bar_index": 3,
-      "or_high": 34.87,
-      "or_low": 34.34,
-      "pct_over": 0.37
-    },
-    {
-      "symbol": "BBSE3",
-      "setups": [
-        "orb"
-      ],
-      "price": 37.17,
-      "at": "10:20 AM",
-      "bar_start": "10:15",
-      "bar_index": 3,
-      "or_high": 37.06,
-      "or_low": 36.61,
-      "pct_over": 0.3
-    },
-    {
-      "symbol": "INTB3",
-      "setups": [
-        "orb"
-      ],
-      "price": 15.14,
-      "at": "10:20 AM",
-      "bar_start": "10:15",
-      "bar_index": 3,
-      "or_high": 15.01,
-      "or_low": 14.57,
-      "pct_over": 0.87
-    },
-    {
-      "symbol": "IRBR3",
-      "setups": [
-        "orb"
-      ],
-      "price": 63.03,
-      "at": "10:20 AM",
-      "bar_start": "10:15",
-      "bar_index": 3,
-      "or_high": 62.9,
-      "or_low": 62.11,
-      "pct_over": 0.21
-    },
-    {
-      "symbol": "TAEE11",
-      "setups": [
-        "orb"
-      ],
-      "price": 40.98,
-      "at": "10:20 AM",
-      "bar_start": "10:15",
-      "bar_index": 3,
-      "or_high": 40.77,
-      "or_low": 40.04,
-      "pct_over": 0.52
-    },
-    {
-      "symbol": "UNIP6",
-      "setups": [
-        "orb"
-      ],
-      "price": 50.64,
-      "at": "10:20 AM",
-      "bar_start": "10:15",
-      "bar_index": 3,
-      "or_high": 50.52,
-      "or_low": 49.98,
-      "pct_over": 0.24
-    },
-    {
-      "symbol": "CXSE3",
-      "setups": [
-        "orb"
-      ],
-      "price": 20.72,
-      "at": "10:25 AM",
-      "bar_start": "10:20",
-      "bar_index": 4,
-      "or_high": 20.69,
-      "or_low": 20.45,
-      "pct_over": 0.14
-    },
-    {
-      "symbol": "SLCE3",
-      "setups": [
-        "orb"
-      ],
-      "price": 17.02,
-      "at": "10:25 AM",
-      "bar_start": "10:20",
-      "bar_index": 4,
-      "or_high": 17.0,
-      "or_low": 16.74,
-      "pct_over": 0.12
-    },
-    {
       "symbol": "TIMS3",
       "setups": [
         "orb"
       ],
-      "price": 22.21,
-      "at": "10:30 AM",
-      "bar_start": "10:25",
-      "bar_index": 5,
-      "or_high": 22.13,
-      "or_low": 22.0,
-      "pct_over": 0.36
-    },
-    {
-      "symbol": "VIVT3",
-      "setups": [
-        "orb"
-      ],
-      "price": 35.34,
-      "at": "10:30 AM",
-      "bar_start": "10:25",
-      "bar_index": 5,
-      "or_high": 35.31,
-      "or_low": 34.82,
-      "pct_over": 0.08
-    },
-    {
-      "symbol": "WEGE3",
-      "setups": [
-        "orb"
-      ],
-      "price": 50.52,
-      "at": "10:35 AM",
-      "bar_start": "10:30",
-      "bar_index": 6,
-      "or_high": 50.13,
-      "or_low": 49.5,
-      "pct_over": 0.78
-    },
-    {
-      "symbol": "RAPT4",
-      "setups": [
-        "orb"
-      ],
-      "price": 3.95,
-      "at": "11:00 AM",
-      "bar_start": "10:55",
-      "bar_index": 11,
-      "or_high": 3.94,
-      "or_low": 3.85,
-      "pct_over": 0.25
-    },
-    {
-      "symbol": "POMO4",
-      "setups": [
-        "orb"
-      ],
-      "price": 3.54,
-      "at": "11:05 AM",
-      "bar_start": "11:00",
-      "bar_index": 12,
-      "or_high": 3.53,
-      "or_low": 3.42,
-      "pct_over": 0.28
-    },
-    {
-      "symbol": "KLBN11",
-      "setups": [
-        "orb"
-      ],
-      "price": 17.02,
-      "at": "11:15 AM",
-      "bar_start": "11:10",
-      "bar_index": 14,
-      "or_high": 17.0,
-      "or_low": 16.78,
-      "pct_over": 0.12
+      "price": 23.35,
+      "at": "10:25 AM",
+      "bar_start": "10:20",
+      "bar_index": 4,
+      "or_high": 23.33,
+      "or_low": 22.9,
+      "pct_over": 0.09
     }
   ],
   "offline": "varredura_5m.json"
