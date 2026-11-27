@@ -62,7 +62,7 @@ jobs:
         if: steps.pregao.outputs.ok == 'sim' && steps.modo.outputs.modo == 'noite'
         run: |
           DIA=$(TZ=America/Sao_Paulo date +%F)
-          { cat baixar.txt; echo; python diario.py --pasta dados || true; echo; python analise_diaria.py || true; echo; python arquivar_dados.py dados || true; echo; python carteira_s1.py || true; } > "relatorios/${DIA}_noite.txt"
+          { cat baixar.txt; echo; python diario.py --pasta dados || true; echo; python analise_diaria.py || true; echo; python arquivar_dados.py dados || true; echo; python carteira_s1.py || true; echo; python carteira_fatores.py || true; } > "relatorios/${DIA}_noite.txt"
           cat "relatorios/${DIA}_noite.txt" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Salvar no repositório
@@ -70,12 +70,13 @@ jobs:
         run: |
           git config user.name "agente-b3"
           git config user.email "agente-b3@users.noreply.github.com"
-          for p in relatorios historico diario_sinais.csv trader/watchlist.json s1 analise; do
+          for p in relatorios historico diario_sinais.csv trader/watchlist.json s1 analise fatores; do
             if [ -e "$p" ]; then git add "$p"; fi
           done
           git status --short
           git diff --cached --quiet || git commit -m "Agente ${{ steps.modo.outputs.modo }}: $(TZ=America/Sao_Paulo date '+%d/%m/%Y %H:%M')"
           git push
+
 
 
 
