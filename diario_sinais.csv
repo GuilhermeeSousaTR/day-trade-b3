@@ -148,3 +148,5 @@ data;acao;hora_entrada;entrada;stop;alvo;saida;como_terminou;resultado_pct;merca
 2026-11-26;RAPT4;11:00;3,95;3,89;4,01;3,89;stop;-1,492;nao;sim;nao;nao
 2026-11-26;POMO4;11:05;3,54;3,48;3,60;3,60;alvo;1,736;nao;sim;nao;nao
 2026-11-26;KLBN11;11:15;17,02;16,89;17,15;16,95;fechamento;-0,511;nao;nao;nao;nao
+2026-11-27;TIMS3;10:25;23,35;23,11;23,59;23,59;alvo;0,906;nao;sim;nao;nao
+2026-11-27;MBRF3;11:35;18,93;18,61;19,25;18,61;stop;-1,790;nao;nao;nao;nao
